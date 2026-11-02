@@ -1,0 +1,13 @@
+# measuring spoon research
+- Standard round bowls often will not enter a narrow spice jar mouth; slim or rectangular bowls reach the bottom of small jars.
+- Engraved or etched markings last; printed markings can fade in the dishwasher.
+- 18/8 stainless steel resists corrosion; heavier gauge resists bending on hard-packed ingredients like brown sugar.
+- Check the set sizes: some omit 1/8 tsp, 3/4 tsp or 1/16 tsp, and some lack metric markings.
+- Storage: removable ring, snap-on clasp or magnets; rings can feel crowded, magnets keep spoons stacked.
+- Dual-ended spoons (one for dry, one for liquid) save drawer space but can drip if overfilled.
+- Level dry ingredients with a straight edge; heaped spoons are the biggest source of error.
+- Long handles help reach into deep jars and keep fingers out of spice.
+- Adjustable (sliding) spoons cover many sizes in one tool but the slider is a moving part to clean.
+- Dishwasher safe is common for steel; magnetic sets should dry fully.
+- Large print or deep-stamped labels help with readability.
+- Source quality: mix of retail pages and review blogs.

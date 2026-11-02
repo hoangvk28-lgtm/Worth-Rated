@@ -1,0 +1,11 @@
+# duster research
+- Microfiber: split fibers pick up fine dust, good for electronics and furniture; needs washing; reusable heads can shed on rough surfaces.
+- Feather: gentle on delicate and decorative items, blinds; sources disagree on whether feathers hold static, so do not claim static for feathers.
+- Electrostatic disposable refills: convenient and strong dust trapping by maker claims; ongoing refill purchases are the main cost; capture multipliers (3X, 5X) are maker claims.
+- Extendable poles: reach and a pivoting or bendable head matter; poles in listings run from about 30 to 100+ inches; a longer pole wobbles more at full extension.
+- Chenille heads are bulky and suit fan blades and shutters.
+- Dust high to low: do ceilings and fans first, floors last, so falling dust is not redone.
+- Fan blades: slide a pillowcase or enclosing head so dust is caught rather than flung into the air.
+- Handle grip, pole weight and locking mechanism matter for comfortable overhead use; neck strain is the real limit, not reach.
+- Check refill compatibility: many third-party refills fit Swiffer-style handles, confirm on the listing.
+- Washable heads: air dry, no bleach or tumble drying, per maker notes.

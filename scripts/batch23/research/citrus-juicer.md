@@ -1,0 +1,11 @@
+# citrus juicer research
+- Three families: electric reamers (press halved fruit, cone spins, often auto reversing), manual lever presses (cast iron or aluminum, leverage), handheld squeezers (hinged bowls for lemon/lime).
+- Electric reamers reduce hand effort and suit people with hand pain; take more counter space.
+- Lever presses use mechanical advantage; heavy cast iron bodies need a stable counter; some have suction feet.
+- Handheld hinged squeezers are compact and dishwasher friendly, best for lemons and limes, strain on small hands if the fruit is large.
+- Vendor sourced yield figures vary widely (electric about a third more than handheld per one seller); treat as rough, do not quote numbers.
+- Pulp control: reamer plus strainer; adjustable pulp settings on some electrics; seeds caught by strainer.
+- Cleaning: removable strainers and cones, check dishwasher safe; plastic reamers can crack over time.
+- Acid: citrus juice reacts with some uncoated metals; stainless (304) and coated aluminum common; rinse promptly.
+- Cut fruit in half, cut side down in press; room temperature fruit yields more easily than cold; rolling firm fruit loosens juice.
+- Pomegranates can be pressed in heavy lever presses per makers.

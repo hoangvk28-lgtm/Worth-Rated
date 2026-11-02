@@ -1,0 +1,12 @@
+# measuring cup research
+- Liquid and dry cups hold the same volume but are built differently: liquid cups have a spout and headspace above the top marking so you can carry and pour without spilling; dry cups have a flat rim so you can level off.
+- Test kitchens recommend liquid cups for liquids and dry cups for dry ingredients; a clear glass 1-cup liquid measure was a top pick for accuracy and legibility.
+- Read liquid cups at eye level on a flat surface; looking from above misreads the meniscus.
+- Markings should be molded, engraved or high-contrast; printed marks can wear off in the dishwasher.
+- Dry cups: stainless, aluminum and plastic. Level with a straight edge; scooping directly from a bag packs flour and changes the amount.
+- Humidity and how flour is packed change dry volume; weighing on a scale is the most consistent method for baking.
+- Glass is heavy but does not stain or warp; microwaveable glass is handy for melting butter; check temperature limits.
+- Collapsible silicone cups save space but flex, so level carefully and stand them on a counter before filling.
+- Nesting sets need to fit together and hold the handle straight; check which sizes are included (1/8, 1/4, 1/3, 1/2, 2/3, 3/4, 1 cup).
+- Large print or high-contrast markings help anyone who reads small type with difficulty.
+- Source quality: mix of test-kitchen articles and retail pages.

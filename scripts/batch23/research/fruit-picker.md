@@ -1,0 +1,11 @@
+# fruit picker research
+- Reach: a short pole is enough for small trees; telescoping poles commonly run from about 13 up to 24 feet for tall trees. Longer poles flex more and are harder to aim.
+- Weight and balance: a pole should be light enough to carry for a full session; weight at the tip with a full basket tires the arms quickly.
+- Material: stainless steel and aluminum are common. Metal conducts electricity, so poles near overhead utility lines are a serious hazard; fiberglass is the safer choice near lines.
+- Power lines: check overhead for lines before extending a pole. A utility advises keeping tools at least three metres away. If a tree touches or nears lines, call an arborist or the utility.
+- Even non-conductive poles can be unsafe when wet.
+- Basket: foam pad cushions soft fruit; metal prongs or claws twist the stem free. Capacity matters for heavy fruit like grapefruit or pomelo.
+- Locks: twist or flip locks keep sections from collapsing; sap, dew and sugar can gum up telescoping joints, so wipe down after use.
+- Thread: many baskets use a 3/4 inch Acme thread common on paint-roller style extension poles; check fit if buying a head only.
+- Method: twist the fruit gently rather than yanking; pick from the ground, not from ladders.
+- Sectional poles are a lower-cost option for one or two backyard trees; telescoping suits trees of varying heights.

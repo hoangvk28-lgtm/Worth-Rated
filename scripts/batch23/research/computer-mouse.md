@@ -1,0 +1,13 @@
+# computer mouse research
+- Fit first: palm, claw and fingertip grips; a mouse that is too small or large forces the wrist to compensate. Try to match hand length.
+- Wired vs wireless: wireless removes cable drag but needs batteries or charging; 2.4 GHz receivers use a USB port; Bluetooth needs built-in Bluetooth or a dongle.
+- DPI is tracking sensitivity; office use rarely needs more than 1000 to 1600; adjustable steps help for large monitors.
+- Polling rate is a separate spec: how often the mouse reports its position.
+- Optical sensors suit most surfaces; glass needs a high precision sensor (some premium mice track on glass).
+- Ergonomic and vertical mice reduce forearm rotation; they take days to get used to; better for repetitive strain prevention, not medical treatment.
+- Trackballs keep the hand still and move only the thumb or fingers.
+- Quiet-click switches cut click noise; useful in shared rooms.
+- Ambidextrous shapes suit left-handers; contoured mice are usually right-hand only.
+- Battery life varies from about a year on AA or AAA mice to days on small rechargeables.
+- Multi-device switching (Bluetooth plus 2.4 GHz) helps with laptop and tablet.
+- Tip: pair the mouse with a surface it tracks well; glossy or glass desks can confuse cheap sensors.

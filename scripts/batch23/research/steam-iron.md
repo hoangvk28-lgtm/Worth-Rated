@@ -1,0 +1,11 @@
+# steam iron research
+- Wattage mainly sets heat-up speed; sources disagree on thresholds (1400W to 1600W minimum, higher is faster). Steady steam output matters as much as watts.
+- Soleplate: stainless steel, nonstick and ceramic are common. The material must glide without sticking to fabric. Anti-drip helps avoid water spots.
+- Auto shutoff cuts power after the iron sits motionless; stored heat can still scorch fabric if the iron is left face down.
+- Hard water: mineral buildup partly clogs steam vents. Descale every 2 to 3 months with regular use; a self-clean feature helps.
+- Water type: makers disagree. Some say tap water only or a 50/50 tap and distilled mix for very hard water (Tefal, De'Longhi warn about pure distilled). Others allow distilled. The manual decides.
+- Spitting and leaking causes: not hot enough when steam is used, iron laid flat while heating, overfilled tank, worn tank seal, mineral buildup.
+- Fixes: let the iron reach temperature, stand upright while heating, empty tank after use, store upright, clean vents with a cotton swab and equal parts vinegar and water.
+- Tank size sets refill frequency; steam stations suit heavy ironing with higher steam and larger tank.
+- Cord design (swivel, retractable) and warranty matter for daily comfort.
+- Sources were general retail and support pages; treat as general guidance.

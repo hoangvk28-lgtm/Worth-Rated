@@ -26,6 +26,14 @@ export function parseCsv(text) {
   return rows;
 }
 export function loadArticles() {
+  if (process.env.BATCH === "batch23") {
+    // keyword best 30.10 (batch23): kitchen tools, cleaning, garden hand tools, mice, pens
+    const NICHE = { "bulb planter": "Garden", "fruit picker": "Garden", "garden trowel": "Garden", "gardening glove": "Garden", "soil moisture meter": "Garden", "computer mouse": "Computer Accessories", "trackball mouse": "Computer Accessories", "captioned phone": "Simple Tech", "duster": "Home Cleaning", "mop": "Home Cleaning", "spray bottle": "Home Cleaning", "trash can": "Home", "soap dispenser": "Home", "clothes hanger": "Home", "steam iron": "Home", "emergency light": "Home", "serving tray": "Home", "shoelace": "Daily Living", "lotion applicator": "Daily Living", "pen": "Writing", "pen grip": "Writing" };
+    const AID = /arthritis|arthritic|seniors|tremors|lotion|no-tie|elastic-shoelaces|pen-grips|pencil-grips|weighted-pens|large-grip|captioned|large-print/;
+    return JSON.parse(readFileSync(resolve(ROOT, "scripts/batch23-plan.json"), "utf-8")).map((r) => ({ id: r.id, cluster: r.seed, seed: r.seed, title: r.title, slug: r.slug, keyword: r.keyword, supporting: "", type: "Best", status: "", tier: r.tier,
+      query: r.tier ? r.title.replace(/^Best\s+/, "").replace(/\s+Under \$\d+$/, "") : r.keyword.replace(/^best /, ""), niche: r.tier ? "Budget" : NICHE[r.seed] || "Kitchen",
+      why: r.tier ? `BUDGET GUIDE: every product listed is currently priced at or under $${r.tier}. Frame value-for-money tradeoffs at this budget, compare with what spending more would add, but never state prices or dollar figures in the text (the title is fine).` : `Angle: "${r.keyword}". Picks must clearly match this angle.${AID.test(r.slug) ? " Daily-living aid for limited grip or dexterity: judge grip force, handle size and one-handed use; never imply medical benefit or treatment." : ""}`, note: "" }));
+  }
   if (process.env.BATCH === "batch22") {
     // kw 29.10 (batch22): kitchen scissors, adaptive aids, book holders, food storage, garden, shopping carts, TV speakers
     const NICHE = { "kitchen scissors": "Kitchen", "food storage container": "Kitchen", "salad spinner": "Kitchen", "kettle tipper": "Kitchen", "dustpan and brush": "Home Cleaning",

@@ -1,0 +1,13 @@
+# mop research
+- Hardwood and laminate need a barely damp head; excess water seeps into seams and can swell or warp boards.
+- Floors should air dry in under about 15 minutes; if longer, too much water was used.
+- Spin mops with adjustable wringing let you go nearly dry for hardwood/laminate or leave more moisture for tile.
+- Flat microfiber mops are lighter, reach corners, but are weaker on tough stains.
+- String mops hold a lot of water; fine for tile/sealed floors, often criticized for vinyl and laminate.
+- Luxury vinyl plank is waterproof material but moisture trapped under seams can still cause problems.
+- Steam mops are widely warned against on laminate; also questionable on vinyl plank.
+- Use pH-neutral cleaner made for the floor; too much cleaner leaves a cloudy film.
+- Dust or sweep before wet mopping so grit is not dragged across the finish.
+- Microfiber absorbs better than cotton; follow maker instructions for washing pads (softener reportedly reduces absorbency, unverified).
+- Tile with grout may need a scrubbing feature.
+- Dirty-water mopping spreads grime; separate clean/dirty water systems help.

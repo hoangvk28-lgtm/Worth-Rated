@@ -1,0 +1,12 @@
+# cheese grater research
+- Rotary graters often preferred for hard cheese (Parmesan, Romano); little pressure needed, hand stays away from blade.
+- Box graters: large cutouts on coarse sides give uneven shreds on hard cheese; the fine side suits Parmesan. Four sides: coarse, medium, fine, slicer.
+- Electric (salad shooter style) suits volume and consistent shred size; very hard or crumbly cheese can jam motors.
+- Flat microplane style blades give fluffy fine Parmesan.
+- Match tool to volume: rotary for light use, electric for heavy daily use, box as backup for vegetables.
+- Rotary drums with suction base need smooth, clean, flat surfaces (glass, tile, stone); textured counters defeat suction.
+- Cold cheese grates better; chilling a soft cheese briefly helps. Hard cheese grates cleanly at room temp.
+- Clean blades right after use; dairy residue dries hard. Dishwasher safe varies; check listing.
+- 304 stainless is a common premium grade; 430 stainless is cheaper, magnetic, adequate but check for rust in dishwashers.
+- Containers: measuring marks and lids help storage; keep grated cheese refrigerated and use within days.
+- Not found: anti-caking agents in pre-shredded cheese; do not claim.

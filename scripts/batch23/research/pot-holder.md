@@ -1,0 +1,11 @@
+# pot holder research
+- Wet fabric conducts heat quickly to the hand; a damp cotton pot holder protects far less. Listings warn to use only when completely dry.
+- Silicone is waterproof, non-porous and wipes clean; listing ratings are commonly 446F to 500F, a few higher. Ratings vary by product, so read each listing.
+- Cotton is more flexible and comfortable but can scorch or catch fire near open flame; thin cotton performs worst.
+- Hybrids (silicone face, quilted cotton lining) are often favored in kitchen testing write-ups: grip from silicone, comfort from cotton.
+- Most pot holders are heat resistant, not heatproof; replace worn or burned-through ones.
+- Pot holders cover flat contact and handles; mitts protect hands and forearms for deep oven work.
+- Cast iron handles stay hot for a long time, including oven-use handles; handle sleeves are for stovetop use and some listings warn against leaving them on in the oven or near open flame.
+- Handle sleeves must fit the handle: check listed skillet diameter or length; assist handles on the opposite side need their own holder.
+- Trivet use: a pot holder can double as a hot pad under dishes, but check the listing before putting it under a very hot pan.
+- Sources were retailer pages and test-kitchen write-ups; treat temperatures as listing claims.
