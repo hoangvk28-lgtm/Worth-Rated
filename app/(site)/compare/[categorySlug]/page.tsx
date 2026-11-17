@@ -9,9 +9,11 @@ import { categories } from "@/data/categories";
 import { getCategoryBySlug } from "@/lib/helpers";
 import { getPublicProductsForCategoryHub } from "@/lib/public-products";
 
-export const revalidate = false;
 
 // ─── Static params ────────────────────────────────────────────────────────────
+
+// Static export: this list is the complete set of routes; anything else 404s.
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return categories.map((cat) => ({ categorySlug: cat.slug }));

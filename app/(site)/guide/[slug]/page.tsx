@@ -27,22 +27,22 @@ import { dynamicGuideSlugs, dynamicGuideLoaders } from "@/data/dynamic-guides-re
 import { RichGuidePage, type RichGuideModule } from "@/components/guide/RichGuidePage";
 import { InfoGuidePage, type InfoGuideModule } from "@/components/guide/InfoGuidePage";
 
-export const revalidate = 604800;
 
 type Props = { params: Promise<{ slug: string }> };
 
 // ─── Static generation ────────────────────────────────────────────────────────
 
+// A static export has no server, so every guide URL must be prerendered here,
+// including the 5,600+ rich guides in data/dynamic-guides-registry.ts that the
+// old Vercel deployment deliberately left to ISR. dynamicParams = false makes
+// anything outside this list render the exported 404 instead of being requested
+// from a server that no longer exists.
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  const [guideSlugs] = await Promise.all([getPublicGuideSlugs()]);
+  const guideSlugs = await getPublicGuideSlugs();
   const categorySlugs = categories.map((c) => c.slug);
-  // dynamicGuideSlugs (4000+ rich data-file guides) are intentionally NOT prerendered:
-  // they render on first request and are ISR-cached from then on. Prerendering them
-  // put ~5000 HTML pages (~3GB) into every deployment, blowing through Vercel Hobby's
-  // Deployment Storage and ISR Writes quotas on each push.
-  const all = [...new Set([...guideSlugs, ...categorySlugs])].filter(
-    (slug) => !dynamicGuideSlugs.includes(slug)
-  );
+  const all = [...new Set([...guideSlugs, ...categorySlugs, ...dynamicGuideSlugs])];
   return all.map((slug) => ({ slug }));
 }
 

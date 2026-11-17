@@ -1,0 +1,21 @@
+{
+  // Cloudflare Workers deployment for worthrated.com.
+  //
+  // The site is a Next.js static export (next.config.ts sets output: "export"),
+  // so there is no Worker code at all: Cloudflare serves the prerendered HTML in
+  // ./out directly from its static asset hosting, and applies public/_headers and
+  // public/_redirects, which Next copies into ./out at build time.
+  //
+  // Deploy:  npm run deploy
+  // Preview: npm run preview
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "worthrated",
+  "compatibility_date": "2026-05-01",
+  "assets": {
+    "directory": "./out",
+    // Serve /guide/foo from guide/foo.html, matching trailingSlash: false,
+    // and fall back to the exported 404 page for anything unmatched.
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

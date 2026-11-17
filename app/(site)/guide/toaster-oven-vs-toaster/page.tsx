@@ -20,7 +20,6 @@ import {
   type GuideProduct,
 } from "@/data/guides/toaster-oven-vs-toaster";
 
-export const revalidate = 604800;
 
 export const metadata: Metadata = buildMetadata({
   title: metaTitle,

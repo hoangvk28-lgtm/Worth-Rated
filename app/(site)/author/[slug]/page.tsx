@@ -9,9 +9,11 @@ import { getPublicGuides } from "@/lib/public-guides";
 import { buildMetadata, SITE_URL } from "@/lib/seo";
 import { formatDate } from "@/lib/utils";
 
-export const revalidate = 604800;
 
 type Props = { params: Promise<{ slug: string }> };
+
+// Static export: this list is the complete set of routes; anything else 404s.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return authors.map((a) => ({ slug: a.slug }));

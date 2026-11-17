@@ -4,8 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NODE_OPTIONS=--max-old-space-size=6144 next build",
-    "start": "next start",
+    "cf:config": "node scripts/build-cloudflare-static-config.mjs",
+    "build": "npm run cf:config && NODE_OPTIONS=--max-old-space-size=8192 next build && node scripts/prune-export.mjs",
+    "start": "npx serve out",
+    "preview": "npm run build && wrangler dev --env-file .env.cloudflare",
+    "deploy": "npm run build && wrangler deploy --env-file .env.cloudflare",
     "lint": "eslint",
     "seed:products": "npx tsx scripts/seed-products.ts",
     "seed:guides": "npx tsx scripts/seed-guides.ts",
@@ -43,6 +46,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.163.0"
   }
 }

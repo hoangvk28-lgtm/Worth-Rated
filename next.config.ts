@@ -1,55 +1,48 @@
 import type { NextConfig } from "next";
+import path from "path";
 
+// Cloudflare deployment.
+//
+// This site is served as a pure static export (output: "export") from
+// Cloudflare's static asset hosting. There is no Node server at runtime, which
+// is deliberate: Vercel's per-request ISR Read / function-invocation billing is
+// what this move exists to remove.
+//
+// Consequences, all handled elsewhere in the repo:
+//   * next.config headers()/redirects() do nothing in an export, so they live
+//     in public/_headers and public/_redirects, which Cloudflare reads.
+//     scripts/build-cloudflare-static-config.mjs generates both (npm run cf:config).
+//   * Route handlers (app/api), middleware (proxy.ts), the admin panel and
+//     server actions are unsupported and have been removed.
+//   * next/image optimization needs a server, so images are served unoptimized.
+//   * ISR is gone: every route is prerendered at build time, including the
+//     5,600+ rich guides in data/dynamic-guides-registry.ts.
+//   * scripts/prune-export.mjs trims Next's per-route segment payloads from out/
+//     so the deployment stays under Cloudflare's 20,000-asset cap.
 const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          { key: "X-Frame-Options", value: "SAMEORIGIN" },
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
-          { key: "Content-Security-Policy", value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' *.googletagmanager.com *.google-analytics.com *.clarity.ms; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' *.google-analytics.com *.supabase.co *.clarity.ms; style-src 'self' 'unsafe-inline'; frame-ancestors 'self';" },
-          { key: "Cross-Origin-Opener-Policy", value: "same-origin-allow-popups" },
-        ],
-      },
-    ];
+  output: "export",
+
+  // Pin the workspace root explicitly. A stray lockfile above this folder can
+  // otherwise make Next.js infer the whole home directory as the workspace.
+  outputFileTracingRoot: path.join(__dirname),
+  turbopack: {
+    root: path.join(__dirname),
   },
-  async redirects() {
-    return [
-      // non-www → www (301 permanent — tells Google which is canonical)
-      // TODO: confirm final domain, this must match NEXT_PUBLIC_SITE_URL
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "worthrated.com" }],
-        destination: "https://www.worthrated.com/:path*",
-        permanent: true,
-      },
-      {
-        source: "/about",
-        destination: "/about-us", // TODO: confirm real about-page slug
-        permanent: true,
-      },
-      // Fix 404: /author listing page → about page
-      {
-        source: "/author",
-        destination: "/about-us", // TODO: confirm real about-page slug
-        permanent: true,
-      },
-    ];
-  },
+
+  // Cloudflare serves /guide/foo from out/guide/foo.html with
+  // html_handling: "drop-trailing-slash", which matches the canonical URLs
+  // buildMetadata() emits (no trailing slash).
+  trailingSlash: false,
+
   experimental: {
-    serverActions: {
-      bodySizeLimit: "10mb",
-    },
+    // The export prerenders 5,600+ pages. The default worker count makes
+    // several concurrent Node processes exhaust RAM + swap on this machine.
+    cpus: 2,
+    staticGenerationMaxConcurrency: 2,
   },
+
   images: {
-    // Vercel Hobby plan's free Image Optimization quota (5,000 transformations/month)
-    // is shared across every project on the account and is already exhausted, which
-    // makes every next/image request 402 in production. Serve images unoptimized
-    // (no on-the-fly resize/reformat) until the plan is upgraded or the quota resets.
+    // Required by output: "export" — there is no server to optimize images.
     unoptimized: true,
     remotePatterns: [
       {
@@ -57,18 +50,9 @@ const nextConfig: NextConfig = {
         hostname: "*.supabase.co",
         pathname: "/storage/v1/object/public/**",
       },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
-        hostname: "images.pexels.com",
-      },
-      {
-        protocol: "https",
-        hostname: "m.media-amazon.com",
-      },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "images.pexels.com" },
+      { protocol: "https", hostname: "m.media-amazon.com" },
     ],
   },
 };

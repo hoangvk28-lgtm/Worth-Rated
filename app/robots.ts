@@ -1,20 +1,18 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/seo";
 
+// Static export: emit robots.txt at build time.
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
         userAgent: "*",
-        allow: ["/", "/_next/static/", "/_next/image"],
-        disallow: [
-          "/admin",
-          "/admin/",
-          "/api/admin",
-          "/api/admin/",
-          "/api/",
-          "/_next/",
-        ],
+        allow: ["/", "/_next/static/"],
+        // The admin panel and API routes no longer exist (static export),
+        // so /_next/ internals are all that is left to keep out of the index.
+        disallow: ["/_next/"],
       },
       // AI crawlers: allow full indexing so content surfaces in AI search results
       { userAgent: "GPTBot", allow: "/" },

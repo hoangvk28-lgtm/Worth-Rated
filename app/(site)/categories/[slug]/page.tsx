@@ -20,7 +20,6 @@ import { buildMetadata, SITE_URL } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
-export const revalidate = 604800;
 
 // ─── Per-category editorial educational topics ────────────────────────────────
 
@@ -56,6 +55,9 @@ const educationalTopics: Record<string, EducationalTopic[]> = {
 };
 
 // ─── Static generation ────────────────────────────────────────────────────────
+
+// Static export: this list is the complete set of routes; anything else 404s.
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return categories.map((c) => ({ slug: c.slug }));

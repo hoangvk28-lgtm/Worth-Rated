@@ -16,7 +16,7 @@ const exploreChips = [
   { label: "Garden & Yard", key: "garden-yard" },
 ];
 
-export const dynamic = "force-dynamic";
+// Static export: the deals page is prerendered at build time like every other route.
 
 export const metadata: Metadata = buildMetadata({
   title: "Amazon Finds - Budget-Friendly Easy-to-Use Picks",
