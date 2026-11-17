@@ -9,7 +9,6 @@ npm-debug.log*
 .vercel
 .env*
 
-# Cloudflare static export output and local wrangler state
+# Cloudflare static export output
 /out/
 /.wrangler/
-!.env.cloudflare

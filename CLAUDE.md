@@ -6,8 +6,9 @@
 
 ## Deployment rule: Cloudflare static export (added 2026-11-17, supersedes every Vercel/ISR note below)
 The site no longer runs on Vercel. `next.config.ts` sets `output: "export"` and the whole
-site is prerendered to `out/` and served from Cloudflare's static asset hosting
-(`wrangler.jsonc`, `npm run deploy`). Consequences that override older rules in this file:
+site is prerendered to `out/` and served by a **Cloudflare Pages** project connected to the
+GitHub repo (build command `npm run build`, output directory `out`, configured in the
+Cloudflare dashboard, not in a file here). Consequences that override older rules in this file:
 - **No server at runtime.** No `app/api/**` route handlers, no middleware (`proxy.ts` is gone),
   no server actions, no admin panel (`app/admin/**` and `components/admin` were removed).
   Content is edited in `data/` and shipped by rebuilding, so nothing is live until a rebuild.
@@ -21,8 +22,14 @@ site is prerendered to `out/` and served from Cloudflare's static asset hosting
   `npm run build`). Edit the script, never the generated files. The non-www to www redirect
   cannot live there (Cloudflare matches on path only): it is a zone Redirect Rule, see README.
 - **`npm run build` ends with `scripts/prune-export.mjs`**, which deletes Next 16's per-route
-  `__next.*.txt` segment-cache payloads. Unpruned, 5,600+ routes produce ~45,000 files against
-  Cloudflare's 20,000-asset cap and cannot deploy at all. Do not drop that step.
+  `__next.*.txt` segment-cache payloads. Unpruned, 5,600+ routes produce ~57,000 files against
+  Cloudflare's 20,000-file cap and the deploy fails outright with "Pages only supports up to
+  20,000 files in a deployment". Do not drop that step, and never let the Cloudflare project
+  fall back to the `npx next build` command it auto-detects for a Next.js repo: that skips the
+  prune and reproduces exactly that failure.
+- **`NEXT_PUBLIC_SITE_URL` must be set in the Cloudflare project** (and `NODE_VERSION=22`).
+  It is baked into every canonical tag and into sitemap.xml at build time, so a missing value
+  silently publishes the wrong domain.
 - **Heap:** the build and `npx tsc --noEmit` both need more than Node's default 2 GB with
   5,600+ guide data files. The `build` script sets `--max-old-space-size=8192`; run a bare
   `tsc --noEmit` with the same `NODE_OPTIONS` or it dies with a heap OOM.

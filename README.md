@@ -13,32 +13,38 @@ npm run dev          # http://localhost:3000
 
 ```bash
 npm run build        # regenerates public/_headers + public/_redirects, exports to ./out, prunes it
-npm run preview      # serve ./out through the real Cloudflare runtime (wrangler dev)
-npm run deploy       # build, then wrangler deploy
-npm run start        # plain static server over ./out, no Cloudflare runtime
+npm run start        # serve ./out locally to check the exported site
 ```
 
-Wrangler needs **Node 22 or newer**. The build itself runs on Node 20, but
-`npm run preview` and `npm run deploy` do not.
+The site is deployed as a **Cloudflare Pages** project connected to this GitHub
+repository. Everything is configured in the Cloudflare dashboard, not in a file
+here, so there is no wrangler config in the repo.
 
-`npm run preview` and `npm run deploy` run wrangler with `--env-file .env.cloudflare`
-(an intentionally empty file). Wrangler otherwise picks up `.env.local` and uploads
-the Amazon and Supabase keys in it as Worker secrets. This site has no Worker code
-and needs no secrets.
-
-### Deploying from GitHub instead
-
-In the Cloudflare dashboard, create a **Worker** connected to this repository with:
+**Settings > Build & deployments:**
 
 | Setting | Value |
 |---|---|
 | Build command | `npm run build` |
-| Deploy command | `npx wrangler deploy` |
-| Path / root directory | repository root |
+| Build output directory | `out` |
+| Root directory | repository root |
 
-Set `NEXT_PUBLIC_SITE_URL` to `https://www.worthrated.com` as a build-time
-environment variable. Nothing else is needed: `.env.local` is gitignored, so a CI
-build has no secrets to leak.
+`npm run build` is required, not the `npx next build` that Cloudflare
+auto-detects for a Next.js project. The default command skips
+`scripts/prune-export.mjs`, the export then contains about 57,000 files, and the
+deployment fails with "Pages only supports up to 20,000 files in a deployment."
+
+**Settings > Environment variables (Production):**
+
+| Variable | Value |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | `https://www.worthrated.com` |
+| `NODE_VERSION` | `22` |
+
+`NEXT_PUBLIC_SITE_URL` is baked into every canonical tag and into sitemap.xml at
+build time, so a missing value silently publishes the wrong domain. `.env.local`
+is gitignored, so a Cloudflare build has no secrets to leak and needs none.
+
+A push to `main` triggers a production deploy.
 
 ### The non-www redirect
 
